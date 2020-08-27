@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center" style="height:100vh">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>Login Here</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm">
+            <div class="form-group">
+              <label >Employee code</label>
+              <input type="text" class="form-control" formControlName="user" name="password">
+              <div *ngIf="loginForm.get('user').errors  && loginForm.get('user').touched" class="text-danger">
+                {{ formErrors.user }}
+              </div>
+            </div>
+            <button type="button" id="sendlogin" class="btn btn-primary" (click)="onSubmit()">login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
